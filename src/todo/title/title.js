@@ -1,3 +1,5 @@
-export function printTitle(title) {
-    console.log(title);
+export function getTitle(title) {
+    const myTitle = title;
+
+    return { myTitle };
 }
