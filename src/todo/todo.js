@@ -6,12 +6,12 @@ import { getStatus } from "./status/status.js";
 import { getCategory } from "./category/category.js";
 
 export function createToDoObject(title, description, date, priority, status, category) {
-    const newTitle = getTitle(title);
-    const newDescription = getDescription(description);
-    const newDueDate = getDueDate(date);
-    const newPriority = getPriority(priority);
-    const newStatus = getStatus(status);
-    const newCategory = getCategory(category);
+    const myTitle = getTitle(title);
+    const myDescription = getDescription(description);
+    const myDueDate = getDueDate(date);
+    const myPriority = getPriority(priority);
+    const myStatus = getStatus(status);
+    const myCategory = getCategory(category);
 
-    return { newTitle, newDescription, newDueDate, newPriority, newStatus, newCategory };
+    return { myTitle, myDescription, myDueDate, myPriority, myStatus, myCategory };
 }
