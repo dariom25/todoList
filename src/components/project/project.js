@@ -6,5 +6,9 @@ export class Project{
         this.projectName = projectName;
     }
 
+    addTodo(todo) {
+        this.todoList.push(todo);
+    }
+
 
 }
