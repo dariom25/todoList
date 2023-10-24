@@ -10,5 +10,7 @@ export class Project{
         this.todoList.push(todo);
     }
 
-
+    render() {
+        //render stuff
+    }
 }
