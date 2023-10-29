@@ -40,10 +40,12 @@ export function createDialog() {
 
     //submitButton
     const submitButton = document.createElement("button");
+    submitButton.classList.add("submit-button", "button")
     submitButton.textContent = "Submit";
 
     //closeButton
     const closeButton = document.createElement("button");
+    submitButton.classList.add("close-button", "button")
     closeButton.textContent = "X";
 
     form.appendChild(titleContainer);
