@@ -40,12 +40,12 @@ export function createDialog() {
 
     //submitButton
     const submitButton = document.createElement("button");
-    submitButton.classList.add("submit-button", "button")
+    submitButton.classList.add("submit-button", "button"); // irgendwas ist hier mit den css klassen komisch
     submitButton.textContent = "Submit";
 
     //closeButton
     const closeButton = document.createElement("button");
-    submitButton.classList.add("close-button", "button")
+    submitButton.classList.add("close-button", "button"); // irgendwas ist hier mit den css klassen komisch
     closeButton.textContent = "X";
 
     form.appendChild(titleContainer);
