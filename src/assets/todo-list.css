@@ -1,4 +1,10 @@
 .todo-lists{
     border: 1px solid black;
 
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-lists>h2{
+    margin: 0px;
 }
