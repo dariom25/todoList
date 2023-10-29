@@ -31,7 +31,9 @@ export class View {
         const content = document.querySelector("#content");
         content.appendChild(dialog);
         dialog.showModal();
-        
+
+        const closeButton = document.querySelector(".close-button"); //der eventlistener ist ganz böse an dieser stelle
+        closeButton.addEventListener("click", dialog.close);
     }
 
 }
