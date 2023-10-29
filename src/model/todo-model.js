@@ -1,5 +1,5 @@
-import { createTextElement } from "../../utils/dom-manipulation.js";
-import { generateUniqueId } from "../../utils/unique-id.js";
+import { createTextElement } from "../utils/dom-manipulation.js";
+import { generateUniqueId } from "../utils/unique-id.js";
 
 export class Todo {
     constructor(title, desciption, id = generateUniqueId()) {
