@@ -18,25 +18,41 @@ export function createDialog() {
     titleInput.placeholder = "Add your ToDo";
     titleInput.name = "title";
     titleInput.id = "title";
-    titleContainer.appendChild(titleLabel, titleInput);
+    titleContainer.appendChild(titleLabel);
+    titleContainer.appendChild(titleInput);
+
 
 
     //description
     const descriptionContainer = document.createElement("div");
     descriptionContainer.setAttribute("class", "description-container");
     const descriptionLabel = document.createElement("label");
+    descriptionLabel.textContent = "Description:"
     descriptionLabel.for = "description";
     const descriptionInput = document.createElement("input");
     descriptionInput.type = "text";
     descriptionInput.placeholder = "Describe your ToDo";
     descriptionInput.name = "description";
     descriptionInput.id = "description";
-    descriptionContainer.appendChild(descriptionLabel, descriptionInput);
+    descriptionContainer.appendChild(descriptionLabel);
+    descriptionContainer.appendChild(descriptionInput);
+
 
     //submitButton
     const submitButton = document.createElement("button");
     submitButton.textContent = "Submit";
 
-    form.appendChild(titleContainer, descriptionContainer, submitButton);
+    //closeButton
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "X";
+
+    form.appendChild(titleContainer);
+    form.appendChild(descriptionContainer);
+    form.appendChild(submitButton);
+    form.appendChild(closeButton);
+
+
     dialog.appendChild(form);
+
+    return dialog;
 }
