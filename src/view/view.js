@@ -26,7 +26,7 @@ export class View {
         return element
       }
 
-    showDialog() {
+    showTodoDialog() {
         const dialog = createDialog();
         const content = document.querySelector("#content");
         content.appendChild(dialog);
