@@ -1,4 +1,4 @@
-import { createDialog } from "./components/todo-dialog";
+import { createTodoDialog } from "./components/todo-dialog";
 
 export class View {
     constructor() {
@@ -27,7 +27,7 @@ export class View {
       }
 
     showTodoDialog() {
-        const dialog = createDialog();
+        const dialog = createTodoDialog();
         const content = document.querySelector("#content");
         content.appendChild(dialog);
         dialog.showModal();

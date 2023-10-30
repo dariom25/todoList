@@ -1,4 +1,4 @@
-export function createDialog() {
+export function createTodoDialog() {
     const dialog = document.createElement("dialog");
 
     const dialogTitle = document.createElement("p");
