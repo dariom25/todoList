@@ -31,9 +31,19 @@ export class View {
         const content = document.querySelector("#content");
         content.appendChild(dialog);
         dialog.showModal();
-
-        const closeButton = document.querySelector(".close-button"); //der eventlistener ist ganz böse an dieser stelle
-        closeButton.addEventListener("click", dialog.close);
+        
+        const submitButton = document.querySelector(".submit-button");
+        submitButton.addEventListener("click", () => {
+            const userInput = this.getUserInputFromTodoDialog.bind(this);
+            console.log(userInput);
+        });
     }
 
+    getUserInputFromTodoDialog() {
+        const title = document.querySelector("#title").value;
+        const desciption = document.querySelector("#description").value;
+        console.log(title, desciption);
+
+        return [title, desciption];
+    }
 }
