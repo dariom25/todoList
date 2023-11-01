@@ -24,7 +24,7 @@ export class View {
         return element
       }
 
-    bindAddTodo(handler) {
+    bindAddTodo = (handler) => {
         const submitButton = document.querySelector(".submit-button");
         submitButton.addEventListener("click", event => {
             event.preventDefault();
