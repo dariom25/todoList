@@ -38,8 +38,7 @@ export class View {
         const dueDate = document.querySelector("#due-date").value;
         const priority = document.querySelector("#priority").value;
         const category = document.querySelector("#category").value;
-        console.log(title, desciption, dueDate, priority, category);
 
-        return [title, desciption];
+        return [title, desciption, dueDate, priority, category];
     }
 }
