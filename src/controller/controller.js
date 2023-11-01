@@ -10,19 +10,20 @@ export class Controller {
     }
 
     _createNewTodo() {
-        const userInput = ["UserInput1", "UserInput2"];
+        const userInput = this.view.getUserInputFromTodoForm();
         const newTodo = new Todo(userInput[0], userInput[1]);
 
         return newTodo;
     }
 
     handleAddTodo = () => {
-        this.todoListModel.addTodo(this._createNewTodo());
+        const todo = this._createNewTodo();
+        this.todoListModel.addTodo(todo); 
         console.log(this.todoListModel.todoList);
     }
 
     bindEvents() {
-        this.view.bindShowTodoDialog(this.handleAddTodo);
+        this.view.bindAddTodo(this.handleAddTodo);
     }
 }
 
