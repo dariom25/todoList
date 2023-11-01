@@ -1,0 +1,8 @@
+.todo-form{
+    border: 1px solid black;
+
+    grid-area: 2/2/2/8;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
