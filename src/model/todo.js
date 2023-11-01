@@ -1,9 +1,13 @@
 import { generateUniqueId } from "../utils/unique-id";
 
 export class Todo {
-    constructor(title, desciption) {
+    constructor(title, desciption, dueDate, priority, category) {
         this.title = title;
         this.desciption = desciption;
+        this.dueDate = dueDate;
+        this.priority = priority;
+        this.category = category;
+        this.complete = false;
         this.id = generateUniqueId();
     }
 
@@ -11,7 +15,5 @@ export class Todo {
         this.title = title;
         this.desciption = desciption;
     }
-
-    //getVaulues
 
 }
