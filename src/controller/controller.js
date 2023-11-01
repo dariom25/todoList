@@ -16,13 +16,13 @@ export class Controller {
         return newTodo;
     }
 
-    handleAddTodo() {
+    handleAddTodo = () => {
         this.todoListModel.addTodo(this._createNewTodo());
         console.log(this.todoListModel.todoList);
     }
 
     bindEvents() {
-        this.view.bindShowTodoDialog();
+        this.view.bindShowTodoDialog(this.handleAddTodo);
     }
 }
 
