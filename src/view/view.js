@@ -39,11 +39,13 @@ export class View {
         });
     }
 
-    showTodoDialog() {
+    showTodoDialog = (handler) => {
         const dialog = createTodoDialog();
         const content = document.querySelector("#content");
         content.appendChild(dialog);
         dialog.showModal();
+
+        this.bindAddTodo(handler);
     }
 
     getUserInputFromTodoDialog() {
