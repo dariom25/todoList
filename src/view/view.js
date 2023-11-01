@@ -31,17 +31,19 @@ export class View {
         addTodoButton.addEventListener("click", this.showTodoDialog)
     }
 
+    bindAddTodo(handler) {
+        const submitButton = document.querySelector(".submit-button");
+        submitButton.addEventListener("submit", event => {
+            event.preventDefault();
+            handler();
+        });
+    }
+
     showTodoDialog() {
         const dialog = createTodoDialog();
         const content = document.querySelector("#content");
         content.appendChild(dialog);
         dialog.showModal();
-        
-        const submitButton = document.querySelector(".submit-button");
-        submitButton.addEventListener("click", () => {
-            const userInput = this.getUserInputFromTodoDialog.bind(this);
-            console.log(userInput);
-        });
     }
 
     getUserInputFromTodoDialog() {
