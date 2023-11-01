@@ -1,4 +1,4 @@
-import { Todo } from "./todo-model";
+import { Todo } from "./todo";
 
 export class Project{
     constructor(projectName) {
