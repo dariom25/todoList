@@ -26,6 +26,11 @@ export class View {
         return element
       }
 
+    bindShowTodoDialog() {
+        const addTodoButton = document.querySelector(".create-todo");
+        addTodoButton.addEventListener("click", this.showTodoDialog)
+    }
+
     showTodoDialog() {
         const dialog = createTodoDialog();
         const content = document.querySelector("#content");
