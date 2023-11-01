@@ -11,8 +11,6 @@ export class View {
         }
     }
 
-    //method to add eventListeners
-
     createElement(tag, className) {
         const element = document.createElement(tag)
         if (className) element.classList.add(className)
@@ -20,38 +18,27 @@ export class View {
         return element
       }
     
-      getElement(selector) {
+    getElement(selector) {
         const element = document.querySelector(selector)
     
         return element
       }
 
-    bindShowTodoDialog() {
-        const addTodoButton = document.querySelector(".create-todo");
-        addTodoButton.addEventListener("click", this.showTodoDialog)
-    }
-
     bindAddTodo(handler) {
         const submitButton = document.querySelector(".submit-button");
-        submitButton.addEventListener("submit", event => {
+        submitButton.addEventListener("click", event => {
             event.preventDefault();
             handler();
         });
     }
 
-    showTodoDialog = (handler) => {
-        const dialog = createTodoDialog();
-        const content = document.querySelector("#content");
-        content.appendChild(dialog);
-        dialog.showModal();
-
-        this.bindAddTodo(handler);
-    }
-
-    getUserInputFromTodoDialog() {
+    getUserInputFromTodoForm() {
         const title = document.querySelector("#title").value;
         const desciption = document.querySelector("#description").value;
-        console.log(title, desciption);
+        const dueDate = document.querySelector("#due-date").value;
+        const priority = document.querySelector("#priority").value;
+        const category = document.querySelector("#category").value;
+        console.log(title, desciption, dueDate, priority, category);
 
         return [title, desciption];
     }
