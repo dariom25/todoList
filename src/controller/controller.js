@@ -11,7 +11,7 @@ export class Controller {
 
     _createNewTodo() {
         const userInput = this.view.getUserInputFromTodoForm();
-        const newTodo = new Todo(userInput[0], userInput[1]);
+        const newTodo = new Todo(userInput[0], userInput[1]); //die userinputs müssen noch angepasst werden
 
         return newTodo;
     }
