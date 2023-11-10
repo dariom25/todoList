@@ -19,7 +19,7 @@ export class Controller {
     handleAddTodo = () => {
         const todo = this._createNewTodo();
         this.todoListModel.addTodo(todo); 
-        console.log(this.todoListModel.todoList);
+        this.view.render(this.todoListModel.todoList); //bisher werden nur title und checkbox angezeigt. liegt der fehler an dem kommentar oben oder werden die anderen felder nicht richtig gegetted
     }
 
     bindEvents() {
