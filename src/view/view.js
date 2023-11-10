@@ -1,14 +1,15 @@
 import { createTodoDialog } from "./components/todo-dialog";
+import { displayTodo } from "./components/displayTodo";
 
 export class View {
     constructor() {
         //erstelle hier das display
     }
 
-    render(todo) {
-        for (const property in todo) {
-            console.log(todo[property]);
-        }
+    render(todoList) {
+        todoList.forEach(todo => {
+            displayTodo(todo.title, todo.description, todo.dueDute, todo.priority, todo.category)
+        });
     }
 
     createElement(tag, className) {
