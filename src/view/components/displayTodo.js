@@ -2,9 +2,11 @@ export function displayTodo(title, description, dueDate, category, priority) {
     const content = document.querySelector("#content");
     const todoContainer = document.createElement("div");
     todoContainer.setAttribute("class", "todo-container");
+    content.appendChild(todoContainer);
     
     const todo = document.createElement("div");
     todo.setAttribute("class", "todo-element");
+    todoContainer.appendChild(todo);
 
     const todoTitle = document.createElement("div");
     todoTitle.setAttribute("class", "todo-title");
@@ -27,7 +29,7 @@ export function displayTodo(title, description, dueDate, category, priority) {
     todo.appendChild(todoCategory);
 
     const todoPriority = document.createElement("div");
-    todoPriority.setAttribute("class", "todo-prioriy");
+    todoPriority.setAttribute("class", "todo-priority");
     todoPriority.textContent = priority;
     todo.appendChild(todoPriority);
 
