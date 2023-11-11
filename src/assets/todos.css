@@ -9,6 +9,7 @@
 .todos>h2{
     margin: 0px;
     align-self: center;
+    color: white;
 }
 
 .todo-element{
@@ -24,20 +25,24 @@
     border-right: 1px solid white;
 }
 
+.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete{
+    padding: 5px;
+}
+
 .todo-title{
     grid-area: 1/1;
 }
 
 .todo-description{
-    grid-area: 1/2;
+    grid-area: 1/4;
 }
 
 .todo-due-date{
-    grid-area: 1/3;
+    grid-area: 1/2;
 }
 
 .todo-priority{
-    grid-area: 1/4;
+    grid-area: 1/3;
 }
 
 .todo-category{
