@@ -32,7 +32,10 @@ export function displayTodo(title, description, dueDate, category, priority) {
     todoPriority.textContent = priority;
     todoElement.appendChild(todoPriority);
 
+    const completeContainer = document.createElement("div");
     const todoComplete = document.createElement("input");
     todoComplete.type = "checkbox"; //hier muss vielleicht nochmal geprüft werden, ob das alles korrekt angezeigt wird
-    todoElement.appendChild(todoComplete);
+    completeContainer.setAttribute("class", "todo-complete")
+    todoElement.appendChild(completeContainer);
+    completeContainer.appendChild(todoComplete);
 }
