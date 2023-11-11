@@ -18,8 +18,9 @@ export class Controller {
 
     handleAddTodo = () => {
         const todo = this._createNewTodo();
-        this.todoListModel.addTodo(todo); 
-        this.view.render(this.todoListModel.todoList); //bisher werden nur title und checkbox angezeigt. liegt der fehler an dem kommentar oben?
+        this.todoListModel.addTodo(todo);
+        this.view.removeAllTodosFromDisplay(); 
+        this.view.render(this.todoListModel.todoList);
     }
 
     bindEvents() {
