@@ -16,6 +16,12 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
     color: white;
+
+    border-bottom: 1px solid white;
+}
+
+.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority{
+    border-right: 1px solid white;
 }
 
 .todo-title{
