@@ -14,18 +14,18 @@
 
 .todo-element{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /*column width muss angepasst werden*/
 
     color: white;
 
     border-bottom: 1px solid white;
 }
 
-.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority{
+.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .edit-todo-btn{
     border-right: 1px solid white;
 }
 
-.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete{
+.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .delete-todo-btn, .edit-todo-btn{
     padding: 5px;
 
     overflow: hidden;
@@ -34,25 +34,33 @@
 }
 
 .todo-title{
-    grid-area: 1/1;
-}
-
-.todo-description{
-    grid-area: 1/4;
-}
-
-.todo-due-date{
     grid-area: 1/2;
 }
 
-.todo-priority{
-    grid-area: 1/3;
-}
-
-.todo-category{
+.todo-description{
     grid-area: 1/5;
 }
 
-.todo-complete{
+.todo-due-date{
+    grid-area: 1/3;
+}
+
+.todo-priority{
+    grid-area: 1/4;
+}
+
+.todo-category{
     grid-area: 1/6;
+}
+
+.todo-complete{
+    grid-area: 1/7;
+}
+
+.edit-todo-btn{
+    grid-area: 1/8;
+}
+
+.delete-todo-btn{
+    grid-area: 1/9;
 }
