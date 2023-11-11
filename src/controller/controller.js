@@ -19,6 +19,10 @@ export class Controller {
     handleAddTodo = () => {
         const todo = this._createNewTodo();
         this.todoListModel.addTodo(todo);
+        this.updateDisplay();
+    }
+
+    updateDisplay() {
         this.view.removeAllTodosFromDisplay(); 
         this.view.render(this.todoListModel.todoList);
     }
