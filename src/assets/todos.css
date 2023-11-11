@@ -2,9 +2,11 @@
     border: 1px solid black;
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .todos>h2{
     margin: 0px;
+    align-self: center;
 }
