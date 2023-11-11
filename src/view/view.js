@@ -33,6 +33,13 @@ export class View {
         });
     }
 
+    bindDeleteTodo = (handler) => {
+        const deleteBtn = document.querySelector(".delete-todo-btn");
+        deleteBtn.addEventListener("click", () => {
+            handler();
+        });
+    }
+
     getUserInputFromTodoForm() {
         const title = document.querySelector("#title").value;
         const description = document.querySelector("#description").value;
