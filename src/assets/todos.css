@@ -27,6 +27,10 @@
 
 .todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete{
     padding: 5px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .todo-title{
