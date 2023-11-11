@@ -1,9 +1,10 @@
-import { Todo } from "./todo";
+import { generateUniqueId } from "../utils/unique-id";
 
-export class Project{
+export class TodoList{
     constructor(projectName) {
         this.todoList = [];
         this.projectName = projectName;
+        this.id = generateUniqueId();
     }
 
     addTodo(todo) {
