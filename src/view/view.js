@@ -40,6 +40,17 @@ export class View {
         });
     }
 
+    removeAllTodosFromDisplay() {
+        const todoElements = document.querySelectorAll(".todo-element");
+        let counter = 0;
+        todoElements.forEach(element => {
+            if (counter !== 0) {
+                element.remove();
+            }
+            counter++;
+        })
+    }
+
     getUserInputFromTodoForm() {
         const title = document.querySelector("#title").value;
         const description = document.querySelector("#description").value;
