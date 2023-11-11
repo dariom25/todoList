@@ -11,7 +11,7 @@ export class Controller {
 
     _createNewTodo() {
         const userInput = this.view.getUserInputFromTodoForm();
-        const newTodo = new Todo(userInput[0], userInput[1]); //die userinputs müssen noch angepasst werden
+        const newTodo = new Todo(userInput[0], userInput[1], userInput[2], userInput[3], userInput[4]); //die userinputs müssen noch angepasst werden
 
         return newTodo;
     }
@@ -19,7 +19,7 @@ export class Controller {
     handleAddTodo = () => {
         const todo = this._createNewTodo();
         this.todoListModel.addTodo(todo); 
-        this.view.render(this.todoListModel.todoList); //bisher werden nur title und checkbox angezeigt. liegt der fehler an dem kommentar oben oder werden die anderen felder nicht richtig gegetted
+        this.view.render(this.todoListModel.todoList); //bisher werden nur title und checkbox angezeigt. liegt der fehler an dem kommentar oben?
     }
 
     bindEvents() {

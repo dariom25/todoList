@@ -8,7 +8,7 @@ export class View {
 
     render(todoList) {
         todoList.forEach(todo => {
-            displayTodo(todo.title, todo.description, todo.dueDute, todo.priority, todo.category)
+            displayTodo(todo.title, todo.description, todo.dueDate, todo.category, todo.priority)
         });
     }
 
@@ -35,11 +35,11 @@ export class View {
 
     getUserInputFromTodoForm() {
         const title = document.querySelector("#title").value;
-        const desciption = document.querySelector("#description").value;
+        const description = document.querySelector("#description").value;
         const dueDate = document.querySelector("#due-date").value;
         const priority = document.querySelector("#priority").value;
         const category = document.querySelector("#category").value;
 
-        return [title, desciption, dueDate, priority, category];
+        return [title, description, dueDate, priority, category];
     }
 }
