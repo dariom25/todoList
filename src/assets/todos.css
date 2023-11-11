@@ -10,3 +10,34 @@
     margin: 0px;
     align-self: center;
 }
+
+.todo-element{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    color: white;
+}
+
+.todo-title{
+    grid-area: 1/1;
+}
+
+.todo-description{
+    grid-area: 1/2;
+}
+
+.todo-due-date{
+    grid-area: 1/3;
+}
+
+.todo-priority{
+    grid-area: 1/4;
+}
+
+.todo-category{
+    grid-area: 1/5;
+}
+
+.todo-complete{
+    grid-area: 1/6;
+}
