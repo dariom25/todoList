@@ -38,4 +38,14 @@ export function displayTodo(title, description, dueDate, category, priority) {
     completeContainer.setAttribute("class", "todo-complete")
     todoElement.appendChild(completeContainer);
     completeContainer.appendChild(todoComplete);
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.setAttribute("class", "delete-todo-btn");
+    deleteBtn.textContent = "X";
+    todoElement.appendChild(deleteBtn);
+
+    const editBtn = document.createElement("button");
+    editBtn.setAttribute("class", "edit-todo-btn");
+    editBtn.textContent = "Edit";
+    todoElement.appendChild(editBtn);
 }
