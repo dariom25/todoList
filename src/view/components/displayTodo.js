@@ -1,8 +1,8 @@
 export function displayTodo(title, description, dueDate, category, priority) {
-    const content = document.querySelector("#content");
+    const todosContainer = document.querySelector(".todo");
     const todoContainer = document.createElement("div");
     todoContainer.setAttribute("class", "todo-container");
-    content.appendChild(todoContainer);
+    todosContainer.appendChild(todoContainer);
     
     const todo = document.createElement("div");
     todo.setAttribute("class", "todo-element");
