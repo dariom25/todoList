@@ -8,7 +8,7 @@ export class View {
 
     render(todoList) {
         todoList.forEach(todo => {
-            displayTodo(todo.title, todo.description, todo.dueDate, todo.category, todo.priority)
+            displayTodo(todo.title, todo.description, todo.dueDate, todo.category, todo.priority, todo.id)
         });
     }
 
@@ -34,10 +34,15 @@ export class View {
     }
 
     bindDeleteTodo = (handler) => {
-        const deleteBtn = document.querySelector(".delete-todo-btn");
-        deleteBtn.addEventListener("click", () => {
-            handler();
-        });
+         const todoContainer = document.querySelector(".todo-container");
+         todoContainer.addEventListener("click", (event) => {
+            if (event.target.classList.contains("delete-todo-btn")) {
+                
+                const id = event.target.id;
+
+                handler(id);
+            }
+         });
     }
 
     removeAllTodosFromDisplay() {
