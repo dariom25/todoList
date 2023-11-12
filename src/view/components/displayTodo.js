@@ -49,4 +49,9 @@ export function displayTodo(title, description, dueDate, category, priority, id)
     editBtn.setAttribute("class", "edit-todo-btn");
     editBtn.textContent = "Edit";
     todoElement.appendChild(editBtn);
+
+    const unfoldBtn = document.createElement("button");
+    unfoldBtn.setAttribute("class", "unfold-todo-btn");
+    unfoldBtn.textContent = "Unfold";
+    todoElement.appendChild(unfoldBtn);
 }
