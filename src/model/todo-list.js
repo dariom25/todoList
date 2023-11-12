@@ -11,8 +11,8 @@ export class TodoList{
         this.todoList.push(todo);
     }
 
-    deleteTodo(todo) {
-        this.todoList = this.todoList.filter((element) => element.id !== todo.id)
+    deleteTodo(id) {
+        this.todoList = this.todoList.filter((element) => element.id !== id)
     }
 
     
