@@ -27,6 +27,11 @@ export class Controller {
         this.updateDisplay();
     }
 
+    handleUnfoldTodo = (id) => {
+        this.view.unfoldTodo(id);
+        this.updateDisplay();
+    }
+
     updateDisplay() {
         this.view.removeAllTodosFromDisplay(); 
         this.view.render(this.todoListModel.todoList);
