@@ -11,7 +11,7 @@ export class Controller {
 
     _createNewTodo() {
         const userInput = this.view.getUserInputFromTodoForm();
-        const newTodo = new Todo(userInput[0], userInput[1], userInput[2], userInput[3], userInput[4]); //die userinputs müssen noch angepasst werden
+        const newTodo = new Todo(userInput[0], userInput[1], userInput[2], userInput[3], userInput[4]);
 
         return newTodo;
     }
@@ -22,6 +22,11 @@ export class Controller {
         this.updateDisplay();
     }
 
+    handleDeleteTodo = () => {
+        this.todoListModel.deleteTodo();
+        this.updateDisplay();
+    }
+
     updateDisplay() {
         this.view.removeAllTodosFromDisplay(); 
         this.view.render(this.todoListModel.todoList);
@@ -29,6 +34,7 @@ export class Controller {
 
     bindEvents() {
         this.view.bindAddTodo(this.handleAddTodo);
+        this.view.bindDeleteTodo(this.handleDeleteTodo);
     }
 }
 
