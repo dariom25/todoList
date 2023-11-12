@@ -9,33 +9,39 @@ export function displayTodo(title, description, dueDate, category, priority, id)
 
     const todoTitle = document.createElement("div");
     todoTitle.setAttribute("class", "todo-title");
+    todoTitle.classList.add("closed");
     todoTitle.textContent = title;
     todoElement.appendChild(todoTitle);
 
     const todoDescription = document.createElement("div");
     todoDescription.setAttribute("class", "todo-description");
+    todoDescription.classList.add("closed");
     todoDescription.textContent = description;
     todoElement.appendChild(todoDescription);
 
     const todoDueDate = document.createElement("div");
     todoDueDate.setAttribute("class", "todo-due-date");
+    todoDueDate.classList.add("closed");
     todoDueDate.textContent = dueDate;
     todoElement.appendChild(todoDueDate);
 
     const todoCategory = document.createElement("div");
     todoCategory.setAttribute("class", "todo-category");
+    todoCategory.classList.add("closed");
     todoCategory.textContent = category;
     todoElement.appendChild(todoCategory);
 
     const todoPriority = document.createElement("div");
     todoPriority.setAttribute("class", "todo-priority");
+    todoPriority.classList.add("closed");
     todoPriority.textContent = priority;
     todoElement.appendChild(todoPriority);
 
     const completeContainer = document.createElement("div");
     const todoComplete = document.createElement("input");
     todoComplete.type = "checkbox"; //hier muss vielleicht nochmal geprüft werden, ob das alles korrekt angezeigt wird
-    completeContainer.setAttribute("class", "todo-complete")
+    completeContainer.setAttribute("class", "todo-complete");
+    todoComplete.classList.add("closed");
     todoElement.appendChild(completeContainer);
     completeContainer.appendChild(todoComplete);
 
