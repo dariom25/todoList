@@ -40,6 +40,7 @@ export class Controller {
     bindEvents() {
         this.view.bindAddTodo(this.handleAddTodo);
         this.view.bindDeleteTodo(this.handleDeleteTodo);
+        this.view.bindUnfoldTodo(this.handleUnfoldTodo);
     }
 }
 
