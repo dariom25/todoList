@@ -57,6 +57,18 @@ export class View {
         });
     }
 
+    unfoldTodo(id, todoList) {
+        todoList.forEach(todo => {
+            if (id === todo.id) {
+                if (todo.classList.contains("closed")) {
+                    todo.classList.remove("closed");
+                } else {
+                    todo.classList.add("closed");
+                }
+            }
+        })
+    }
+
     removeAllTodosFromDisplay() {
         const todoElements = document.querySelectorAll(".todo-element");
         let counter = 0;
