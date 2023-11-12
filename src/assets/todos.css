@@ -25,12 +25,8 @@
     border-right: 1px solid white;
 }
 
-.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .delete-todo-btn, .edit-todo-btn{
+.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .delete-todo-btn, .edit-todo-btn, .unfold-todo-btn{
     padding: 5px;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .todo-title{
@@ -63,4 +59,8 @@
 
 .delete-todo-btn{
     grid-area: 1/9;
+}
+
+.unfold-todo-btn{
+    grid-area: 1/1;
 }
