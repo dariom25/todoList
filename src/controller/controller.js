@@ -22,8 +22,8 @@ export class Controller {
         this.updateDisplay();
     }
 
-    handleDeleteTodo = () => {
-        this.todoListModel.deleteTodo();
+    handleDeleteTodo = (id) => {
+        this.todoListModel.deleteTodo(id);
         this.updateDisplay();
     }
 
