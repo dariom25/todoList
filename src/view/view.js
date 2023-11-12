@@ -45,6 +45,18 @@ export class View {
          });
     }
 
+    bindUnfoldTodo = (handler) => {
+        const todoContainer = document.querySelector(".todo-container");
+        todoContainer.addEventListener("click", (event) => {
+           if (event.target.classList.contains("unfold-todo-btn")) {
+               
+               const id = event.target.id;
+
+               handler(id);
+           }
+        });
+    }
+
     removeAllTodosFromDisplay() {
         const todoElements = document.querySelectorAll(".todo-element");
         let counter = 0;
