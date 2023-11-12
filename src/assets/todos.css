@@ -25,8 +25,12 @@
     border-right: 1px solid white;
 }
 
-.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .delete-todo-btn, .edit-todo-btn, .unfold-todo-btn{
+.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .delete-todo-btn, .edit-todo-btn{
     padding: 5px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .todo-title{
