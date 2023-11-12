@@ -1,4 +1,4 @@
-export function displayTodo(title, description, dueDate, category, priority) {
+export function displayTodo(title, description, dueDate, category, priority, id) {
     const todosContainer = document.querySelector(".todos");
     const todoContainer = document.querySelector(".todo-container");
     todosContainer.appendChild(todoContainer);
@@ -41,6 +41,7 @@ export function displayTodo(title, description, dueDate, category, priority) {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.setAttribute("class", "delete-todo-btn");
+    deleteBtn.setAttribute("id", `${id}`);
     deleteBtn.textContent = "X";
     todoElement.appendChild(deleteBtn);
 
