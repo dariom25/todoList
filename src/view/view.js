@@ -38,7 +38,7 @@ export class View {
          todoContainer.addEventListener("click", (event) => {
             if (event.target.classList.contains("delete-todo-btn")) {
                 
-                const id = event.target.id;
+                const id = event.target.parentElement.id;
 
                 handler(id);
             }
@@ -50,9 +50,9 @@ export class View {
         todoContainer.addEventListener("click", (event) => {
            if (event.target.classList.contains("unfold-todo-btn")) {
                
-               const id = event.target.id;
+                const id = event.target.parentElement.id;
 
-               handler(id);
+                handler(id);
            }
         });
     }
