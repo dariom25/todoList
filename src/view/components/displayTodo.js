@@ -46,20 +46,23 @@ export function displayTodo(title, description, dueDate, category, priority, id)
     completeContainer.appendChild(todoComplete);
 
     const deleteBtn = document.createElement("button");
-    deleteBtn.setAttribute("class", "delete-todo-btn");
+    deleteBtn.classList.add("delete-todo-btn");
     deleteBtn.classList.add("closed");
+    deleteBtn.classList.add(`${id}`);
     deleteBtn.textContent = "X";
     todoElement.appendChild(deleteBtn);
 
     const editBtn = document.createElement("button");
-    editBtn.setAttribute("class", "edit-todo-btn");
+    editBtn.classList.add("edit-todo-btn");
     editBtn.classList.add("closed");
+    editBtn.classList.add(`${id}`);
     editBtn.textContent = "Edit";
     todoElement.appendChild(editBtn);
 
     const unfoldBtn = document.createElement("button");
-    unfoldBtn.setAttribute("class", "unfold-todo-btn");
+    unfoldBtn.classList.add("unfold-todo-btn");
     unfoldBtn.classList.add("closed");
+    unfoldBtn.classList.add(`${id}`);
     unfoldBtn.textContent = "Unfold";
     todoElement.appendChild(unfoldBtn);
 }
