@@ -1,3 +1,5 @@
+import Expand from "../../assets/icons/expand-more.png";
+
 export function displayTodo(title, description, dueDate, category, priority, id) {
     const todosContainer = document.querySelector(".todos");
     const todoContainer = document.querySelector(".todo-container");
@@ -61,6 +63,8 @@ export function displayTodo(title, description, dueDate, category, priority, id)
     const unfoldBtn = document.createElement("button");
     unfoldBtn.classList.add("unfold-todo-btn");
     unfoldBtn.classList.add("closed");
-    unfoldBtn.textContent = "Unfold";
+    const expandMore = document.createElement("img");
+    expandMore.src = Expand;
+    unfoldBtn.appendChild(expandMore);
     todoElement.appendChild(unfoldBtn);
 }
