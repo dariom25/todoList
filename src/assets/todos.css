@@ -14,7 +14,7 @@
 
 .todo-element{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /*column width muss angepasst werden*/
+    grid-template-columns: 5fr 15fr 10fr 10fr 30fr 15fr 5fr 5fr 5fr; /*column width muss angepasst werden*/
 
     color: white;
 
