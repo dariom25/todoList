@@ -29,7 +29,6 @@ export class Controller {
 
     handleUnfoldTodo = (id) => {
         this.view.unfoldTodo(id);
-        this.updateDisplay();
     }
 
     updateDisplay() {
