@@ -1,5 +1,7 @@
 import { createTodoDialog } from "./components/todo-dialog";
 import { displayTodo } from "./components/displayTodo";
+import More from "../assets/icons/expand-more.png";
+import Less from "../assets/icons/expand-less.png";
 
 export class View {
     constructor() {
@@ -64,12 +66,14 @@ export class View {
             if (child.classList.contains("closed")) {
                 child.classList.remove("closed");
                 if (child.classList.contains("unfold-todo-btn")) {
-                    child.textContent = "Fold";
+                    const expandLess = child.firstChild;
+                    expandLess.src = Less;
                 };
             } else {
                 child.classList.add("closed");
                 if (child.classList.contains("unfold-todo-btn")) {
-                    child.textContent = "Unfold";
+                    const expandMore = child.firstChild;
+                    expandMore.src = More;
                 };
             };
         });
