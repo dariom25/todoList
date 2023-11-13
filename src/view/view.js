@@ -57,16 +57,22 @@ export class View {
         });
     }
 
-    unfoldTodo(id, todoList) {
-        todoList.forEach(todo => {
-            if (id === todo.id) {
-                if (todo.classList.contains("closed")) {
-                    todo.classList.remove("closed");
-                } else {
-                    todo.classList.add("closed");
-                }
-            }
-        })
+    unfoldTodo(id) {
+        const todoElement = document.getElementById(id);
+        const children = todoElement.childNodes;
+        children.forEach(child => {
+            if (child.classList.contains("closed")) {
+                child.classList.remove("closed");
+                if (child.classList.contains("unfold-todo-btn")) {
+                    child.textContent = "Fold";
+                };
+            } else {
+                child.classList.add("closed");
+                if (child.classList.contains("unfold-todo-btn")) {
+                    child.textContent = "Unfold";
+                };
+            };
+        });
     }
 
     removeAllTodosFromDisplay() {
