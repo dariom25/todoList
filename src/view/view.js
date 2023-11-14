@@ -46,6 +46,7 @@ export class View {
         submitButton.addEventListener("click", event => {
             event.preventDefault();
             handler();
+            this.resetInputs();
         });
     }
 
