@@ -65,11 +65,13 @@ export class View {
         children.forEach(child => {
             if (child.classList.contains("closed")) {
                 child.classList.remove("closed");
+                child.classList.add("open");
                 if (child.classList.contains("unfold-todo-btn")) {
-                    child.style.backgroundImage = `url(${Less})`; //er will hier das neue bild noch nicht nehmen. warum? muss ich doch font libraries nutzen?
+                    child.style.backgroundImage = `url(${Less})`;
                 };
             } else {
                 child.classList.add("closed");
+                child.classList.remove("open");
                 if (child.classList.contains("unfold-todo-btn")) {
                     child.style.backgroundImage = `url(${More})`;
                 };
