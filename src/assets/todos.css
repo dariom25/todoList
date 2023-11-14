@@ -47,6 +47,7 @@
 
 .todo-category{
     grid-area: 1/6;
+
 }
 
 .todo-complete{
@@ -102,4 +103,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.open{
+    word-break: break-all;
 }
