@@ -5,7 +5,7 @@ import Less from "../assets/icons/expand-less.png";
 
 export class View {
     constructor() {
-        //erstelle hier das display
+        const dueDate = document.querySelector("#due-date").valueAsDate = new Date();
     }
 
     render(todoList) {
