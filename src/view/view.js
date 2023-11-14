@@ -26,6 +26,20 @@ export class View {
     
         return element
       }
+    
+    resetInputs() {
+        const title = document.querySelector("#title");
+        const description = document.querySelector("#description");
+        const dueDate = document.querySelector("#due-date");
+        const priority = document.querySelector("#priority");
+        const category = document.querySelector("#category");
+
+        title.value = "";
+        description.value = "";
+        dueDate.valueAsDate = new Date();
+        priority.selectedIndex = "0"
+        category.value = "";
+    }
 
     bindAddTodo = (handler) => {
         const submitButton = document.querySelector(".submit-button");
