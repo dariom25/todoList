@@ -56,7 +56,6 @@ export function displayTodo(title, description, dueDate, category, priority, id)
     const editBtn = document.createElement("button");
     editBtn.classList.add("edit-todo-btn");
     editBtn.classList.add("closed");
-    editBtn.textContent = "Edit";
     todoElement.appendChild(editBtn);
 
     const unfoldBtn = document.createElement("button");
