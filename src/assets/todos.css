@@ -57,46 +57,31 @@
 .edit-todo-btn{
     grid-area: 1/8;
 
-    justify-self: center;
-    align-self: center;
-
     background-image: url("./icons/edit.png");
-    background-repeat: no-repeat;
-    background-position: center;
 
-    border-radius: 100%;
-    width: 1.5vw;
-    height: 1.5vw;
 }
 
 .delete-todo-btn{
     grid-area: 1/9;
 
-    justify-self: center;
-    align-self: center;
-
     background-image: url("./icons/delete.png");
-    background-repeat: no-repeat;
-    background-position: center;
-
-    border-radius: 100%;
-    width: 1.5vw;
-    height: 1.5vw;
 }
 
 .unfold-todo-btn{
     grid-area: 1/1;
-
-    justify-self: center;
-    align-self: center;
-
     background-image: url("./icons/expand-more.png");
+}
+
+.unfold-todo-btn, .delete-todo-btn, .edit-todo-btn{
     background-repeat: no-repeat;
     background-position: center;
 
     border-radius: 100%;
     width: 1.5vw;
     height: 1.5vw;
+
+    justify-self: center;
+    align-self: flex-start;
 }
 
 .closed{
