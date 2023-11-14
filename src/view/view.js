@@ -66,14 +66,12 @@ export class View {
             if (child.classList.contains("closed")) {
                 child.classList.remove("closed");
                 if (child.classList.contains("unfold-todo-btn")) {
-                    const expandLess = child.firstChild;
-                    expandLess.src = Less;
+                    child.style.backgroundImage = `url(${Less})`; //er will hier das neue bild noch nicht nehmen. warum? muss ich doch font libraries nutzen?
                 };
             } else {
                 child.classList.add("closed");
                 if (child.classList.contains("unfold-todo-btn")) {
-                    const expandMore = child.firstChild;
-                    expandMore.src = More;
+                    child.style.backgroundImage = `url(${More})`;
                 };
             };
         });
