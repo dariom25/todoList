@@ -25,7 +25,7 @@
     border-right: 1px solid white;
 }
 
-.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .delete-todo-btn, .edit-todo-btn, .unfold-todo-btn{
+.todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .delete-todo-btn, .edit-todo-btn{
     padding: 5px;
 }
 
@@ -63,6 +63,14 @@
 
 .unfold-todo-btn{
     grid-area: 1/1;
+
+    background-image: url("./icons/expand-more.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 1.5vw;
 }
 
 .closed{
