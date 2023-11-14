@@ -51,7 +51,6 @@ export function displayTodo(title, description, dueDate, category, priority, id)
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("delete-todo-btn");
     deleteBtn.classList.add("closed");
-    deleteBtn.textContent = "X";
     todoElement.appendChild(deleteBtn);
 
     const editBtn = document.createElement("button");
@@ -63,8 +62,5 @@ export function displayTodo(title, description, dueDate, category, priority, id)
     const unfoldBtn = document.createElement("button");
     unfoldBtn.classList.add("unfold-todo-btn");
     unfoldBtn.classList.add("closed");
-    const expandMore = document.createElement("img");
-    expandMore.src = Expand;
-    unfoldBtn.appendChild(expandMore);
     todoElement.appendChild(unfoldBtn);
 }
