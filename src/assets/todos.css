@@ -59,6 +59,17 @@
 
 .delete-todo-btn{
     grid-area: 1/9;
+
+    justify-self: center;
+    align-self: center;
+
+    background-image: url("./icons/delete.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 100%;
+    width: 1.5vw;
+    height: 1.5vw;
 }
 
 .unfold-todo-btn{
