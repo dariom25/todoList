@@ -35,6 +35,11 @@ export class Controller {
         this.view.strikeTodoThrough(id, this.todoListModel.todoList);
     }
 
+    handleEditTodo = (id) => {
+        //model method
+        //view method
+    }
+
     updateDisplay() {
         this.view.removeAllTodosFromDisplay(); 
         this.view.render(this.todoListModel.todoList);
@@ -45,6 +50,7 @@ export class Controller {
         this.view.bindDeleteTodo(this.handleDeleteTodo);
         this.view.bindUnfoldTodo(this.handleUnfoldTodo);
         this.view.bindStrikeTodoThrough(this.handleStrikeTodoThrough);
+        this.view.bindEditTodo(this.handleAddTodo);
     }
 }
 
