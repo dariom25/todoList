@@ -74,11 +74,14 @@ export class View {
         });
     }
 
-    bindStrikethroughTodo = (handler) => {
+    bindStrikeTodoThrough = (handler) => {
         const todoContainer = document.querySelector(".todo-container");
-        todoContainer.addEventListener("onChange", (event) => {
-            if (event.target.classList.contains("complete-todo")) {
-                handler();
+        todoContainer.addEventListener("click", (event) => {
+            if (event.target.classList.contains("complete-input")) {
+                const parentElement = event.target.parentElement;
+                const id = parentElement.parentElement.id;
+
+                handler(id);
             }
         })
     }
@@ -99,6 +102,29 @@ export class View {
                 if (child.classList.contains("unfold-todo-btn")) {
                     child.style.backgroundImage = `url(${More})`;
                 };
+            };
+        });
+    }
+
+    strikeTodoThrough(id, todoList) { //method can be improved
+        const todoElement = document.getElementById(id);
+        const children = todoElement.childNodes;
+        children.forEach(child => {
+            if (child.classList.contains("todo-complete")) {
+                todoList.forEach(todo => {
+                    if (todo.id === id && todo.complete === false) {
+                        todo.complete = true
+                    } else if (todo.id === id && todo.complete === true) {
+                        todo.complete = false
+                    };
+                });
+            } else if (child.classList.contains("todo-title") || child.classList.contains("todo-description") || child.classList.contains("todo-priority") || child.classList.contains("todo-category") || child.classList.contains("todo-due-date")) {
+                if (child.classList.contains("strikethrough") !== true) {
+                    child.classList.add("strikethrough");
+                } else if (child.classList.contains("strikethrough")) {
+                    child.classList.remove("strikethrough");
+                
+                } 
             };
         });
     }
