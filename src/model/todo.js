@@ -11,9 +11,12 @@ export class Todo {
         this.id = generateUniqueId();
     }
 
-    editTodo(title, desciption) {   
-        this.title = title;
-        this.desciption = desciption;
+    editTodo(userInput) {   
+        this.title = userInput[0];
+        this.description = userInput[1];
+        this.dueDate = userInput[2];
+        this.priority = userInput[3];
+        this.category = userInput[4];
     }
 
 }
