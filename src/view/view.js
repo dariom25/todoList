@@ -100,13 +100,11 @@ export class View {
     setInformationIntoTodoForm(id, todoList) {
         todoList.forEach(todo => {
             if (todo.id === id) {
-                for (const property in todo) {
-                    const title = document.querySelector("#title").value = property[0];
-                    const description = document.querySelector("#description").value [1];
-                    const dueDate = document.querySelector("#due-date").value;
-                    const priority = document.querySelector("#priority").value;
-                    const category = document.querySelector("#category").value[4];
-                }
+                const oldTitle = document.querySelector("#title").value = todo.title;
+                const description = document.querySelector("#description").value = todo.description;
+                const dueDate = document.querySelector("#due-date").value = todo.dueDate;
+                const priority = document.querySelector("#priority").value = todo.priority;
+                const category = document.querySelector("#category").value = todo.category; 
             }
         });
     }
