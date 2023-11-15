@@ -17,8 +17,6 @@
     grid-template-columns: 5fr 15fr 10fr 10fr 30fr 15fr 5fr 5fr 5fr; /*column width muss angepasst werden*/
 
     color: white;
-
-    
 }
 
 .todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .edit-todo-btn{
@@ -26,11 +24,12 @@
 }
 
 .todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority{
-    border-right: 1px solid white;
+    border-right: 0px solid white;
 }
 
 .todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .delete-todo-btn, .edit-todo-btn, .unfold-todo-btn{
     padding: 5px;
+    margin-top: 10px;
 }
 
 .todo-title{
