@@ -5,7 +5,7 @@ import Less from "../assets/icons/expand-less.png";
 
 export class View {
     constructor() {
-        //erstelle hier das display
+        const dueDate = document.querySelector("#due-date").valueAsDate = new Date();
     }
 
     render(todoList) {
@@ -72,6 +72,15 @@ export class View {
                 handler(id);
            }
         });
+    }
+
+    bindStrikethroughTodo = (handler) => {
+        const todoContainer = document.querySelector(".todo-container");
+        todoContainer.addEventListener("onChange", (event) => {
+            if (event.target.classList.contains("complete-todo")) {
+                handler();
+            }
+        })
     }
 
     unfoldTodo(id) {
