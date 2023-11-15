@@ -100,3 +100,7 @@
 .open{
     word-break: break-all;
 }
+
+.strikethrough{
+    text-decoration: line-through;
+}
