@@ -86,6 +86,17 @@ export class View {
         })
     }
 
+    bindEditTodo = (handler) => {
+        const todoContainer = document.querySelector(".todo-container");
+        todoContainer.addEventListener("click", (event) => {
+            if (event.target.classList.contains("edit-todo-btn")) {
+                const id = event.target.parentElement.id;
+
+                handler(id);
+            }
+        })
+    }
+
     unfoldTodo(id) {
         const todoElement = document.getElementById(id);
         const children = todoElement.childNodes;
