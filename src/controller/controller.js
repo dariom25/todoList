@@ -39,7 +39,14 @@ export class Controller {
         this.view.setInformationIntoTodoForm(id, this.todoListModel.todoList)
     }
 
-
+    handleEditTodo = (id) => {
+        const userInput = this.view.getUserInputFromTodoForm();
+        this.todoListModel.todoList.forEach(todo => {
+            if (todo.id === id) {
+                todo.editTodo(userInput);
+            }
+        })
+    }
 
     updateDisplay() {
         this.view.removeAllTodosFromDisplay(); 
