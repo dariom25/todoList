@@ -113,6 +113,7 @@ export class View {
             handler(id);
 
             updateButton.classList.remove(id);
+            this.resetInputs();
         })
     }
 
