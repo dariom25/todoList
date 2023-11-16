@@ -3,10 +3,9 @@ import { TodoList } from "../model/todo-list";
 import { View } from "../view/view";
 
 export class Controller {
-    constructor(todoListModel, view, todoModel) {
+    constructor(todoListModel, view) {
         this.todoListModel = todoListModel;
         this.view = view;
-        this.todoModel = todoModel;
         this.bindEvents();
     }
 
@@ -44,8 +43,9 @@ export class Controller {
         this.todoListModel.todoList.forEach(todo => {
             if (todo.id === id) {
                 todo.editTodo(userInput);
-            }
-        })
+            };
+        });
+        this.updateDisplay();
     }
 
     updateDisplay() {
@@ -59,6 +59,7 @@ export class Controller {
         this.view.bindUnfoldTodo(this.handleUnfoldTodo);
         this.view.bindStrikeTodoThrough(this.handleStrikeTodoThrough);
         this.view.bindSetInformationIntoForm(this.handleSetTodoIntoForm);
+        this.view.bindEditTodo(this.handleEditTodo);
     }
 }
 
