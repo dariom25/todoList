@@ -86,14 +86,33 @@ export class View {
         })
     }
 
-    bindEditTodo = (handler) => {
+    bindSetInformationIntoForm = (handler) => {
         const todoContainer = document.querySelector(".todo-container");
         todoContainer.addEventListener("click", (event) => {
             if (event.target.classList.contains("edit-todo-btn")) {
                 const id = event.target.parentElement.id;
 
+                const updateButton = document.querySelector(".update-button");
+                updateButton.classList.add(`${id}`);
+
                 handler(id);
-            }
+
+
+            };
+        });
+    }
+
+    bindEditTodo = (handler) => {
+        const updateButton = document.querySelector(".update-button");
+        updateButton.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const classList = event.target.classList;
+            const id = classList[1];
+            
+            handler(id);
+
+            updateButton.classList.remove(id);
         })
     }
 
