@@ -14,6 +14,4 @@ export class TodoList{
     deleteTodo(id) {
         this.todoList = this.todoList.filter((element) => element.id !== id)
     }
-
-    
 }
