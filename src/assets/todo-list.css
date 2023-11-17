@@ -2,9 +2,26 @@
     border: 1px solid black;
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .todo-lists>h2{
     margin: 0px;
+    color: white;
+}
+
+.todo-list-form{
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-todo-list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.add-todo-list-container>label{
+    color: white;
 }
