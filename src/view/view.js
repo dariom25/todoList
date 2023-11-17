@@ -192,4 +192,10 @@ export class View {
 
         return [title, description, dueDate, priority, category];
     }
+
+    getUserInputFromListForm() {
+        const todoListTitle = document.querySelector(".todo-list-title-input")
+
+        return todoListTitle.value;
+    }
 }
