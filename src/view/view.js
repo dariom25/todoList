@@ -1,5 +1,6 @@
 import { createTodoDialog } from "./components/todo-dialog";
 import { displayTodo } from "./components/displayTodo";
+import { displayTodoList } from "./components/displayTodoList";
 import More from "../assets/icons/expand-more.png";
 import Less from "../assets/icons/expand-less.png";
 
@@ -11,6 +12,12 @@ export class View {
     render(todoList) {
         todoList.forEach(todo => {
             displayTodo(todo.title, todo.description, todo.dueDate, todo.category, todo.priority, todo.id)
+        });
+    }
+
+    renderTodoList(listOfTodoLists) {
+        listOfTodoLists.forEach(todoList => {
+            displayTodoList(todoList.id, todoList.title);
         });
     }
 
@@ -39,6 +46,10 @@ export class View {
         dueDate.valueAsDate = new Date();
         priority.selectedIndex = "0"
         category.value = "";
+    }
+
+    resetTodoListInput() {
+        const todoListTitle = document.querySelector("#todo-list-title-input").value = "";
     }
 
     bindAddTodo = (handler) => {
@@ -117,6 +128,17 @@ export class View {
         })
     }
 
+    bindAddTodoList = (handler) => {
+        const addTodoListButton = document.querySelector(".submit-todo-list-button");
+        addTodoListButton.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            handler();
+
+            this.resetTodoListInput();
+        })
+    }
+
     setInformationIntoTodoForm(id, todoList) {
         todoList.forEach(todo => {
             if (todo.id === id) {
@@ -183,6 +205,13 @@ export class View {
         })
     }
 
+    removeAllTodoListsFromDisplay() {
+        const todoElements = document.querySelectorAll(".todo-list-element");
+        todoElements.forEach(element => {
+            element.remove();
+        })
+    }
+
     getUserInputFromTodoForm() {
         const title = document.querySelector("#title").value;
         const description = document.querySelector("#description").value;
@@ -194,8 +223,8 @@ export class View {
     }
 
     getUserInputFromListForm() {
-        const todoListTitle = document.querySelector(".todo-list-title-input")
+        const todoListTitle = document.querySelector("#todo-list-title-input").value;
 
-        return todoListTitle.value;
+        return todoListTitle;
     }
 }
