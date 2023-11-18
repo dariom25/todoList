@@ -139,6 +139,15 @@ export class View {
         })
     }
 
+    bindSwitchTodoList = (handler) => {
+        const todoListContainer = document.querySelector(".todo-list-container");
+        todoListContainer.addEventListener("click", (event) => {
+            const id = event.target.parentElement.id;
+
+            handler(id);
+        });
+    }
+
     setInformationIntoTodoForm(id, todoList) {
         todoList.forEach(todo => {
             if (todo.id === id) {
