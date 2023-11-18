@@ -25,3 +25,31 @@
 .add-todo-list-container>label{
     color: white;
 }
+
+.todo-list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo-list-element{
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-list-title{
+    color: white;
+}
+
+.remove-todo-list-button{
+    background-image: url("./icons/delete.png");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+
+    justify-self: center;
+    align-self: flex-start;
+}
