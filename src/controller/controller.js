@@ -6,8 +6,12 @@ export class Controller {
     constructor(todoListModel, view) {
         this.todoListModel = todoListModel;
         this.view = view;
+        this.listOfTodoLists = [this.todoListModel];
+        this.currentTodoListID = this.todoListModel.id
         this.bindEvents();
-        this.listOfTodoLists = [];
+        this.displayCurrentTodoList();
+        this.updateTodoListDisplay();
+
     }
 
     _createNewTodo() { //das ist logik und müsste ins model
@@ -15,6 +19,22 @@ export class Controller {
         const newTodo = new Todo(userInput[0], userInput[1], userInput[2], userInput[3], userInput[4]);
 
         return newTodo;
+    }
+
+    setTodoListID(id) {
+        this.currentTodoListID = id;
+    }
+
+    getCurrentTodoList() {
+        let currentTodoList = undefined
+        this.listOfTodoLists.forEach(list => {
+            if (list.id === this.currentTodoListID) {
+                currentTodoList = list;
+                return;
+
+            }
+        });
+        return currentTodoList;
     }
 
     createNewTodoList() {
@@ -29,12 +49,12 @@ export class Controller {
 
     handleAddTodo = () => {
         this.todoListModel.addTodo(this._createNewTodo());
-        this.updateDisplay();
+        this.displayCurrentTodoList();
     }
 
     handleDeleteTodo = (id) => {
         this.todoListModel.deleteTodo(id);
-        this.updateDisplay();
+        this.displayCurrentTodoList();
     }
 
     handleUnfoldTodo = (id) => {
@@ -56,7 +76,7 @@ export class Controller {
                 todo.editTodo(userInput);
             };
         });
-        this.updateDisplay();
+        this.displayCurrentTodoList();
     }
 
     handleAddTodoList = () => {
@@ -64,9 +84,15 @@ export class Controller {
         this.updateTodoListDisplay();
     }
 
-    updateDisplay() {
+    handleSwitchTodoList = (ListID) => { //irgendwas funktioniert hier noch nicht
+        this.setTodoListID(ListID);
+        this.displayCurrentTodoList();
+    }
+
+    displayCurrentTodoList() {
         this.view.removeAllTodosFromDisplay(); 
-        this.view.render(this.todoListModel.todoList);
+        const currentTodoList = this.getCurrentTodoList();
+        this.view.render(currentTodoList.todoList);
     }
 
     updateTodoListDisplay() {
@@ -82,6 +108,7 @@ export class Controller {
         this.view.bindSetInformationIntoForm(this.handleSetTodoIntoForm);
         this.view.bindEditTodo(this.handleEditTodo);
         this.view.bindAddTodoList(this.handleAddTodoList);
+        this.view.bindSwitchTodoList(this.handleSwitchTodoList);
     }
 }
 
