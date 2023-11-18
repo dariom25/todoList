@@ -3,7 +3,7 @@ export function displayTodoList(id, title) {
     
     const todoListElement = document.createElement("div");
     todoListElement.classList.add("todo-list-element");
-    todoListElement.classList.add(id);
+    todoListElement.setAttribute("id", id);
 
     const todoListTitle = document.createElement("div");
     todoListTitle.classList.add("todo-list-title");
