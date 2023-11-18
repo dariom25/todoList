@@ -54,7 +54,8 @@ export class Controller {
     }
 
     handleDeleteTodo = (id) => {
-        this.todoListModel.deleteTodo(id);
+        const currentTodoList = this.getCurrentTodoList();
+        currentTodoList.deleteTodo(id);
         this.displayCurrentTodoList();
     }
 
@@ -63,16 +64,20 @@ export class Controller {
     }
 
     handleStrikeTodoThrough = (id) => {
-        this.view.strikeTodoThrough(id, this.todoListModel.todoList);
+        const currentTodoList = this.getCurrentTodoList();
+        this.view.strikeTodoThrough(id, currentTodoList.todoList);
     }
 
     handleSetTodoIntoForm = (id) => {
-        this.view.setInformationIntoTodoForm(id, this.todoListModel.todoList)
+        const currentTodoList = this.getCurrentTodoList();
+        
+        this.view.setInformationIntoTodoForm(id, currentTodoList.todoList)
     }
 
     handleEditTodo = (id) => {
         const userInput = this.view.getUserInputFromTodoForm();
-        this.todoListModel.todoList.forEach(todo => {
+        const currentTodoList = this.getCurrentTodoList();
+        currentTodoList.todoList.forEach(todo => {
             if (todo.id === id) {
                 todo.editTodo(userInput);
             };
