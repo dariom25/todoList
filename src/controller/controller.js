@@ -48,7 +48,8 @@ export class Controller {
     }
 
     handleAddTodo = () => {
-        this.todoListModel.addTodo(this._createNewTodo());
+        const currentTodoList = this.getCurrentTodoList();
+        currentTodoList.addTodo(this._createNewTodo());
         this.displayCurrentTodoList();
     }
 
