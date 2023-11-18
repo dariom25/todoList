@@ -7,6 +7,7 @@ export class Controller {
         this.todoListModel = todoListModel;
         this.view = view;
         this.bindEvents();
+        this.listOfTodoLists = [];
     }
 
     _createNewTodo() { //das ist logik und müsste ins model
@@ -14,6 +15,16 @@ export class Controller {
         const newTodo = new Todo(userInput[0], userInput[1], userInput[2], userInput[3], userInput[4]);
 
         return newTodo;
+    }
+
+    createNewTodoList() {
+        const newTodoList = new TodoList(this.view.getUserInputFromListForm());
+
+        return newTodoList;
+    }
+
+    addTodoList(todoList) {
+        this.listOfTodoLists.push(todoList);
     }
 
     handleAddTodo = () => {
@@ -48,9 +59,19 @@ export class Controller {
         this.updateDisplay();
     }
 
+    handleAddTodoList = () => {
+        this.addTodoList(this.createNewTodoList());
+        this.updateTodoListDisplay();
+    }
+
     updateDisplay() {
         this.view.removeAllTodosFromDisplay(); 
         this.view.render(this.todoListModel.todoList);
+    }
+
+    updateTodoListDisplay() {
+        this.view.removeAllTodoListsFromDisplay();
+        this.view.renderTodoList(this.listOfTodoLists);
     }
 
     bindEvents() {
@@ -60,6 +81,7 @@ export class Controller {
         this.view.bindStrikeTodoThrough(this.handleStrikeTodoThrough);
         this.view.bindSetInformationIntoForm(this.handleSetTodoIntoForm);
         this.view.bindEditTodo(this.handleEditTodo);
+        this.view.bindAddTodoList(this.handleAddTodoList);
     }
 }
 
