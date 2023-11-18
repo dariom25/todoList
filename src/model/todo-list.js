@@ -1,9 +1,9 @@
 import { generateUniqueId } from "../utils/unique-id";
 
 export class TodoList{
-    constructor(projectName) {
+    constructor(title) {
         this.todoList = [];
-        this.projectName = projectName;
+        this.title = title;
         this.id = generateUniqueId();
     }
 
