@@ -34,23 +34,23 @@
 .todo-list-container{
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .todo-list-element{
     display: flex;
     justify-content: space-between;
+    padding: 4px;
+    color: white;
 }
 
 .todo-list-title{
     cursor: pointer;
-
+    width: 100%;
     align-self: center;
 }
 
 .selected{
     background-color: lightblue;
-    padding: 4px;
     color: black;
     border-radius: 16px;
 }
