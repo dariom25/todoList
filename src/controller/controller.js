@@ -11,6 +11,7 @@ export class Controller {
         this.bindEvents();
         this.displayCurrentTodoList();
         this.updateTodoListDisplay();
+        this.view.highlightSelectedTodoList(this.currentTodoListID);
 
     }
 
@@ -95,10 +96,12 @@ export class Controller {
         this.displayCurrentTodoList();
     }
 
-    handDeleteTodoList = (ListID) => {
+    handleDeleteTodoList = (ListID) => {
         this.deleteTodoList(ListID);
-        this.setTodoListID(this.listOfTodoLists[0].id)
+        this.setTodoListID(this.listOfTodoLists[0].id);
         this.displayCurrentTodoList();
+        this.updateTodoListDisplay();
+        this.view.highlightSelectedTodoList(this.currentTodoListID);
     }
 
     deleteTodoList(ListID) {
@@ -125,6 +128,7 @@ export class Controller {
         this.view.bindEditTodo(this.handleEditTodo);
         this.view.bindAddTodoList(this.handleAddTodoList);
         this.view.bindSwitchTodoList(this.handleSwitchTodoList);
+        this.view.bindDeleteTodoList(this.handleDeleteTodoList);
     }
 }
 
