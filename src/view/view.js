@@ -142,10 +142,23 @@ export class View {
     bindSwitchTodoList = (handler) => {
         const todoListContainer = document.querySelector(".todo-list-container");
         todoListContainer.addEventListener("click", (event) => {
-            const id = event.target.parentElement.id;
-            this.highlightSelectedTodoList(id);
-            handler(id);
+            if (event.target.classList.contains("todo-list-title")) {
+                const id = event.target.parentElement.id;
+                this.highlightSelectedTodoList(id);
+                handler(id);
+            }
         });
+    }
+
+    bindDeleteTodoList = (handler) => {
+        const todoListContainer = document.querySelector(".todo-list-container");
+        todoListContainer.addEventListener("click", (event) => {
+            if (event.target.classList.contains("remove-todo-list-button")) {
+                const id = event.target.parentElement.id;
+                
+                handler(id);
+            }
+        })
     }
 
     highlightSelectedTodoList(id) {
