@@ -143,9 +143,23 @@ export class View {
         const todoListContainer = document.querySelector(".todo-list-container");
         todoListContainer.addEventListener("click", (event) => {
             const id = event.target.parentElement.id;
-
+            this.highlightSelectedTodoList(id);
             handler(id);
         });
+    }
+
+    highlightSelectedTodoList(id) {
+        const todoListContainer = document.querySelector(".todo-list-container");
+        const todoListContainerChildren = todoListContainer.childNodes;
+
+        todoListContainerChildren.forEach(child => {
+            if (child.classList.contains("selected")) {
+                child.classList.remove("selected");
+            }
+            if (child.id === id) {
+                child.classList.add("selected");
+            }
+        })
     }
 
     setInformationIntoTodoForm(id, todoList) {
