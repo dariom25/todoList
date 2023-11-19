@@ -12,7 +12,14 @@ export class Controller {
         this.displayCurrentTodoList();
         this.updateTodoListDisplay();
         this.view.highlightSelectedTodoList(this.currentTodoListID);
+        this.loadDataIntoStorage();
+    }
 
+    loadDataIntoStorage() {
+        localStorage.clear();
+        this.listOfTodoLists.forEach(element => {
+            localStorage.setItem(element.title, JSON.stringify(element));
+        })
     }
 
     _createNewTodo() { //das ist logik und müsste ins model
@@ -52,12 +59,15 @@ export class Controller {
         const currentTodoList = this.getCurrentTodoList();
         currentTodoList.addTodo(this._createNewTodo());
         this.displayCurrentTodoList();
+        this.loadDataIntoStorage();
     }
 
     handleDeleteTodo = (id) => {
         const currentTodoList = this.getCurrentTodoList();
         currentTodoList.deleteTodo(id);
         this.displayCurrentTodoList();
+        this.loadDataIntoStorage();
+
     }
 
     handleUnfoldTodo = (id) => {
@@ -84,11 +94,15 @@ export class Controller {
             };
         });
         this.displayCurrentTodoList();
+        this.loadDataIntoStorage();
+
     }
 
     handleAddTodoList = () => {
         this.addTodoList(this.createNewTodoList());
         this.updateTodoListDisplay();
+        this.loadDataIntoStorage();
+
     }
 
     handleSwitchTodoList = (ListID) => {
@@ -102,6 +116,7 @@ export class Controller {
         this.displayCurrentTodoList();
         this.updateTodoListDisplay();
         this.view.highlightSelectedTodoList(this.currentTodoListID);
+        this.loadDataIntoStorage();
     }
 
     deleteTodoList(ListID) {
