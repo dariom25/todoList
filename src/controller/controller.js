@@ -90,9 +90,19 @@ export class Controller {
         this.updateTodoListDisplay();
     }
 
-    handleSwitchTodoList = (ListID) => { //irgendwas funktioniert hier noch nicht
+    handleSwitchTodoList = (ListID) => {
         this.setTodoListID(ListID);
         this.displayCurrentTodoList();
+    }
+
+    handDeleteTodoList = (ListID) => {
+        this.deleteTodoList(ListID);
+        this.setTodoListID(this.listOfTodoLists[0].id)
+        this.displayCurrentTodoList();
+    }
+
+    deleteTodoList(ListID) {
+        this.listOfTodoLists = this.listOfTodoLists.filter((element) => element.id !== ListID);
     }
 
     displayCurrentTodoList() {
