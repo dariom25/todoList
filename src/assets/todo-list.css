@@ -14,6 +14,9 @@
 .todo-list-form{
     display: flex;
     justify-content: space-between;
+
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
 }
 
 .add-todo-list-container{
