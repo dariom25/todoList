@@ -3,15 +3,11 @@ import "./assets/content.css";
 import "./assets/header.css";
 import "./assets/todos.css";
 import "./assets/todo-list.css";
-import "./assets/dialog.css";
-import { Todo } from './model/todo-model';
-import { Project } from './model/project-model';
-import { generateUniqueId } from './utils/unique-id';
+import "./assets/todo-form.css";
+import "./assets/root.css";
+import { TodoList } from './model/todo-list.js';
 import { View } from './view/view';
+import { Controller } from './controller/controller';
+import { Todo } from './model/todo.js';
 
-const todo1 = new Todo("Das ist ein Titel", "Das ist eine Beschreibung");
-const view = new View();
-
-const showButton = document.querySelector(".create-todo");
-showButton.addEventListener("click", view.showTodoDialog);
-
+const controller = new Controller(new TodoList("My Todo List"), new View());
