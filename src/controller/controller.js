@@ -101,6 +101,7 @@ export class Controller {
     handleAddTodoList = () => {
         this.addTodoList(this.createNewTodoList());
         this.updateTodoListDisplay();
+        this.view.highlightSelectedTodoList(this.currentTodoListID);
         this.loadDataIntoStorage();
 
     }
