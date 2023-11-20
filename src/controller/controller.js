@@ -6,8 +6,9 @@ export class Controller {
     constructor(todoListModel, view) {
         this.todoListModel = todoListModel;
         this.view = view;
-        this.listOfTodoLists = [this.todoListModel];
-        this.currentTodoListID = this.todoListModel.id
+        this.listOfTodoLists = [];
+        this.retrieveDataOrInitializeData();
+        this.currentTodoListID = this.listOfTodoLists[0].id;
         this.bindEvents();
         this.displayCurrentTodoList();
         this.updateTodoListDisplay();
@@ -20,6 +21,25 @@ export class Controller {
         this.listOfTodoLists.forEach(element => {
             localStorage.setItem(element.title, JSON.stringify(element));
         })
+    }
+    
+    fetchDataFromStorage() {
+        for (const key in localStorage) {
+            if (localStorage.hasOwnProperty(key)) {
+                const todoListFromStorage = JSON.parse(localStorage.getItem(key));
+                const todoList = new TodoList("");
+                Object.assign(todoList, todoListFromStorage);
+                this.addTodoList(todoList);
+            }
+        }
+    }
+
+    retrieveDataOrInitializeData() {
+        if (localStorage.length === 0) {
+            this.addTodoList(this.todoListModel)
+        } else {
+            this.fetchDataFromStorage();
+        }
     }
 
     _createNewTodo() { //das ist logik und müsste ins model
