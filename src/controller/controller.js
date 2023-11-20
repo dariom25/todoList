@@ -54,7 +54,7 @@ export class Controller {
     }
 
     getCurrentTodoList() {
-        let currentTodoList = undefined
+        let currentTodoList = undefined;
         this.listOfTodoLists.forEach(list => {
             if (list.id === this.currentTodoListID) {
                 currentTodoList = list;
@@ -119,7 +119,9 @@ export class Controller {
     }
 
     handleAddTodoList = () => {
-        this.addTodoList(this.createNewTodoList());
+        const todoList = this.createNewTodoList();
+        this.addTodoList(todoList);
+        this.setTodoListID(todoList.id);
         this.updateTodoListDisplay();
         this.view.highlightSelectedTodoList(this.currentTodoListID);
         this.loadDataIntoStorage();
@@ -133,7 +135,12 @@ export class Controller {
 
     handleDeleteTodoList = (ListID) => {
         this.deleteTodoList(ListID);
-        this.setTodoListID(this.listOfTodoLists[0].id);
+
+        if (this.listOfTodoLists.length === 0) {
+            this.currentTodoListID = [];
+        } else {
+            this.setTodoListID(this.listOfTodoLists[0].id);
+        }
         this.displayCurrentTodoList();
         this.updateTodoListDisplay();
         this.view.highlightSelectedTodoList(this.currentTodoListID);
@@ -146,8 +153,11 @@ export class Controller {
 
     displayCurrentTodoList() {
         this.view.removeAllTodosFromDisplay(); 
-        const currentTodoList = this.getCurrentTodoList();
-        this.view.render(currentTodoList.todoList);
+        if (this.listOfTodoLists.length !== 0) {
+            const currentTodoList = this.getCurrentTodoList();
+            this.view.render(currentTodoList.todoList);
+        }
+
     }
 
     updateTodoListDisplay() {
