@@ -124,6 +124,7 @@ export class Controller {
         this.setTodoListID(todoList.id);
         this.updateTodoListDisplay();
         this.view.highlightSelectedTodoList(this.currentTodoListID);
+        this.displayCurrentTodoList();
         this.loadDataIntoStorage();
 
     }
