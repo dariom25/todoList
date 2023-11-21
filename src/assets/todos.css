@@ -1,30 +1,31 @@
 .todos{
-    border: 1px solid black;
+    padding: 10px;
+
+    background-color: rgb(37, 37, 37);
+    grid-area: 3/2;
 
     display: flex;
     flex-direction: column;
     gap: 10px;
+    color: rgb(224, 224, 224);
 }
 
 .todos>h2{
     margin: 0px;
-    align-self: center;
-    color: white;
+
 }
 
 .todo-element{
     display: grid;
     grid-template-columns: 5fr 15fr 10fr 10fr 30fr 15fr 5fr 5fr 5fr; /*column width muss angepasst werden*/
-
-    color: white;
 }
 
 .todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .edit-todo-btn{
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgb(224, 224, 224);
 }
 
 .todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority{
-    border-right: 0px solid white;
+    border-right: 0px solid rgb(224, 224, 224);
 }
 
 .todo-title, .todo-category, .todo-description, .todo-due-date, .todo-priority, .todo-complete, .delete-todo-btn, .edit-todo-btn, .unfold-todo-btn{
@@ -58,13 +59,13 @@
 
     display: flex;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .edit-todo-btn{
     grid-area: 1/8;
 
     background-image: url("./icons/edit.png");
-
 }
 
 .delete-todo-btn{
@@ -86,8 +87,14 @@
     width: 32px;
     height: 32px;
 
-    justify-self: center;
-    align-self: flex-start;
+    background-color: rgb(224, 224, 224);
+    border: none;
+    cursor: pointer;
+}
+
+.unfold-todo-btn:active, .delete-todo-btn:active, .edit-todo-btn:active{
+    background-color: rgb(70, 70, 70);
+
 }
 
 .closed{
