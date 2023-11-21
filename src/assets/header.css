@@ -1,4 +1,30 @@
 .header{
     grid-area: 1/1/1/8;
-    border: 1px solid black;
+    
+    box-sizing: border-box;
+
+    color: rgb(22, 22, 22);
+    background-color: rgb(224, 224, 224);
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    padding: 5px;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.about, .settings, .sign-in{
+    cursor: pointer;
+}
+
+.sign-in{
+    background-color: rgb(22, 22, 22);
+    color: rgb(224, 224, 224);
+    padding: 5px;
+    border-radius: 16px;
 }
