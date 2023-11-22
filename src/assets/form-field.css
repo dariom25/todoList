@@ -1,5 +1,6 @@
 .todo-list-form, .todo-form{
     padding: 10px;
+    border-bottom: 1px solid rgb(224, 224, 224);
 }
 
 .todo-list-form{
@@ -72,6 +73,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+
+    border-left: 1px solid rgb(224, 224, 224);
 }
 
 .todo-form>h2{

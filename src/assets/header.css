@@ -1,5 +1,5 @@
 .header{
-    grid-area: 1/1/1/8;
+    grid-area: 1/1/1/3;
     
     box-sizing: border-box;
 
@@ -7,8 +7,13 @@
     background-color: rgb(224, 224, 224);
     width: 100%;
     justify-content: space-between;
+    align-items: flex-start;
     display: flex;
-    padding: 5px;
+    padding: 10px;
+}
+
+h1{
+    margin: 0px;
 }
 
 .links{
@@ -18,13 +23,22 @@
     gap: 10px;
 }
 
-.about, .settings, .sign-in{
+.about, .settings{
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .sign-in{
     background-color: rgb(22, 22, 22);
     color: rgb(224, 224, 224);
     padding: 5px;
-    border-radius: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sign-in:hover{
+    color: rgb(22, 22, 22);
+    background-color: rgb(224, 224, 224);
+    border: 1px solid;
+    padding: 4px;
 }
