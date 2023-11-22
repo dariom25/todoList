@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="bundle.js" defer></script> <!---Moved script from body to head-->
+   <title>ToDo-List</title>
+  </head>
+  <body>
+    <div id="content">
+      <div class="header">
+        <h1>The I-Swear-I'll-Do-It-Tomorrow List</h1>
+        <div class="links">
+          <div class="about">About</div>
+          <div class="settings">Settings</div>
+          <div class="sign-in">Sign In</div>
+        </div>
+      </div>
+
+        <form action="" class="todo-list-form">
+          <h2 class="new-todo-list">Create a new ToDo List</h2>
+          <div class="add-todo-list-container">
+            <label class="todo-list-title-lable" for="todo-list-title-input">Name your List:*</label>
+            <input type="text" name="todo-list-title-input" id="todo-list-title-input">
+          </div>
+          <button class="submit-todo-list-button">Add ToDo List</button>
+        </form>
+        <form action="" class="todo-form">
+          <h2>Create a new ToDo</h2>
+          <div class="title-container">
+            <label for="title">Give it a Title:*</label>
+            <input required type="text" name="title" id="title">
+          </div>
+          <div class="date-container">
+            <label for="due-date">When is it Due?*</label>
+            <input required type="date" name="due-date" id="due-date">
+          </div>
+          <div class="priority-container">
+            <label for="priority">How important is it?*</label>
+            <select required name="priority-listbox" id="priority">
+              <option value="" disabled selected>Select your priority</option>
+              <option value="Low">Low</option>
+              <option value="Middle">Middle</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <div class="description-container">
+            <label for="description">Give it a Description:</label>
+            <input type="text" name="description" id="description">
+          </div>
+          <div class="category-container">
+            <label for="category">Give it a Category:</label>
+            <input type="text" name="category" id="category">
+          </div>
+          <button class="submit-button">Add ToDo</button>
+          <button class="update-button">Update ToDo</button>
+        </form>
+      
+
+      <div class="todo-lists">
+        <h2>Your current Todo Lists</h2>
+        
+        <div class="todo-list-container"></div>
+      </div>
+      
+      <div class="todos">
+        <h2>Your current ToDos</h2>
+        
+        <div class="todo-container">
+          <div class="todo-element">
+            <div class="todo-title closed"><b>Title</b></div>
+            <div class="todo-description closed"><b>Description</b></div>
+            <div class="todo-due-date closed"><b>Due Date</b></div>
+            <div class="todo-priority closed"><b>Priority</b></div>
+            <div class="todo-category closed"><b>Category</b></div>
+            <div class="todo-complete closed"><b>Done</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">Test Test</div>
+    </div>
+
+  </body>
+</html>
