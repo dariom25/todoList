@@ -3,8 +3,9 @@ import "./assets/content.css";
 import "./assets/header.css";
 import "./assets/todos.css";
 import "./assets/todo-list.css";
-import "./assets/todo-form.css";
 import "./assets/root.css";
+import "./assets/form-field.css";
+import "./assets/footer.css"
 import { TodoList } from './model/todo-list.js';
 import { View } from './view/view';
 import { Controller } from './controller/controller';
